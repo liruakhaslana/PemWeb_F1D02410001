@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Konten Utama */
+.konten {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #262626;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Header dengan Video Background */
+.main-header {
+    position: relative;
+    background-color: #050510;
+    padding: 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 204, 0, 0.5);
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(5,5,16,0.3) 0%, rgba(5,5,16,0.75) 100%);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 20px;
+}
+
+.main-header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(120,100,255,0.6);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.header-content .tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 204, 0, 0.9);
+    margin-bottom: 8px;
+}
+
+.header-content .author-tag {
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #444;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    margin: 0 6px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Form Styling */
+.main-form {
+    background: #1f1f1f;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #444;
+    margin: 25px 0;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #161616;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #ffcc00;
+}
+
+/* Button */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #ffd633;
+    transform: translateY(-2px);
+}
+
+/* Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #1f1f1f;
+}
+
+.data-table th, 
+.data-table td {
+    padding: 14px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #333;
+    color: #ffcc00;
+}
+
+/* Alert */
+.alert-sukses {
+    background-color: #1a472a;
+    color: #a8f5c0;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.alert-gagal {
+    background-color: #4a1a1a;
+    color: #f5a8a8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 30px;
+}

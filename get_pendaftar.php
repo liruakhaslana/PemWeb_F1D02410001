@@ -1,14 +1,14 @@
 <?php
-require_once "koneksi.php";
+require_once "config/database.php";
 
-$hasil = mysqli_query($koneksi, "SELECT * FROM pendaftaran ORDER BY waktu_daftar DESC");
+$hasil = mysqli_query($conn, "SELECT * FROM pendaftaran ORDER BY waktu_daftar DESC");
 ?>
 
-<section style="margin-top: 40px;">
-    <h2>Data Pendaftar</h2>
+<h2 style="margin-top: 40px;">Data Pendaftar</h2>
 
-    <?php if (mysqli_num_rows($hasil) > 0): ?>
-    <table border="1" cellpadding="10">
+<?php if (mysqli_num_rows($hasil) > 0): ?>
+<table class="data-table" style="margin-top: 20px;">
+    <thead>
         <tr>
             <th>No</th>
             <th>Username</th>
@@ -16,9 +16,10 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM pendaftaran ORDER BY waktu_daftar
             <th>Tgl Main</th>
             <th>Server</th>
             <th>Platform</th>
-            <th>Waktu</th>
+            <th>Waktu Daftar</th>
         </tr>
-
+    </thead>
+    <tbody>
         <?php $no = 1; while ($row = mysqli_fetch_assoc($hasil)): ?>
         <tr>
             <td><?= $no++ ?></td>
@@ -30,11 +31,10 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM pendaftaran ORDER BY waktu_daftar
             <td><?= $row['waktu_daftar'] ?></td>
         </tr>
         <?php endwhile; ?>
+    </tbody>
+</table>
+<?php else: ?>
+    <p>Belum ada data pendaftar.</p>
+<?php endif; ?>
 
-    </table>
-    <?php else: ?>
-        <p>Belum ada data.</p>
-    <?php endif; ?>
-</section>
-
-<?php mysqli_close($koneksi); ?>
+<?php mysqli_close($conn); ?>
